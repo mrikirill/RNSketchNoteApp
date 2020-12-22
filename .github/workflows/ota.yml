@@ -1,0 +1,20 @@
+name: Release OTA update
+on: workflow_dispatch
+# Note - on-demand builds will use the version of the script that is in the master branch, even if you run a build on
+# a non-master branch
+
+jobs:
+  install-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Get env
+        uses: falti/dotenv-action@v0.2.5
+        with:
+          path: .env.template
+          log-variables: true
+      - name: Build OTA update for iOS
+        uses: avocaddo/AppCenter-Github-Action@v1.0.2
+        with:
+          command: appcenter codepush release-react -a mr.kirill/Test-App -d Staging -t ${{ steps.dotenv.outputs.version }}
+          token: ${{ secrets.APP_CENTER_KEY }}
