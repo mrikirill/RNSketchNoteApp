@@ -16,5 +16,5 @@ jobs:
       - name: Build OTA update for iOS
         uses: avocaddo/AppCenter-Github-Action@v1.0.2
         with:
-          command: appcenter codepush release-react -a mr.kirill/Test-App -d Staging --target-binary-version "${{ steps.dotenv.outputs.version }}"
+          command: appcenter codepush release-react -a mr.kirill/Test-App -d Staging --target-binary-version ${{ steps.dotenv.outputs.version }}
           token: ${{ secrets.APP_CENTER_KEY }}
