@@ -12,9 +12,11 @@ jobs:
         run: |
           npm i
       - name: Build OTA update for iOS
-        uses: mrikirill/AppCenter-Github-Action@v1.1.0
+        uses: mrikirill/RN-AppCenter-CodePush@1.0.0
         env:
           ENV_FILENAME: .env.template
-        with:
-          command: appcenter codepush release-react -a mr.kirill/Test-App -d Staging
-          token: ${{ secrets.APP_CENTER_KEY }}
+          APPCENTER_TOKEN: ${{ secrets.APP_CENTER_KEY }}
+          APP_IOS: mr.kirill/Test-App
+          OTA_CHANNEL_IOS: Staging
+          APP_ANDROID: mr.kirill/Test-App
+          OTA_CHANNEL_ANDROID: Staging
