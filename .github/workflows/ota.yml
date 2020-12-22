@@ -17,7 +17,7 @@ jobs:
           path: .env.template
           log-variables: true
       - name: Build OTA update for iOS
-        uses: mrikirill/AppCenter-Github-Action@v1.0.3
+        uses: mrikirill/AppCenter-Github-Action@v1.0.4
         env:
           VERSION: ${{ steps.dotenv.outputs.version }}
         with:
