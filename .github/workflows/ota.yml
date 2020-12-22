@@ -12,7 +12,7 @@ jobs:
         run: |
           npm i
       - name: Build OTA update for iOS
-        uses: mrikirill/AppCenter-Github-Action@v1.0.8
+        uses: mrikirill/AppCenter-Github-Action@v1.0.9
         with:
           command: appcenter codepush release-react -a mr.kirill/Test-App -d Staging
           token: ${{ secrets.APP_CENTER_KEY }}
