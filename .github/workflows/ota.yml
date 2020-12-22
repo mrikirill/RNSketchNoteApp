@@ -12,7 +12,7 @@ jobs:
         run: |
           npm i
       - name: Build OTA update for iOS
-        uses: mrikirill/RN-AppCenter-CodePush@1.0.0
+        uses: mrikirill/RN-AppCenter-CodePush@v1.0.0
         env:
           ENV_FILENAME: .env.template
           APPCENTER_TOKEN: ${{ secrets.APP_CENTER_KEY }}
