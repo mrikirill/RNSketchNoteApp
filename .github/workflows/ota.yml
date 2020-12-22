@@ -19,6 +19,7 @@ jobs:
       - name: GitHub Action for Codepush
         uses: NishanthShankar/codepush-action@0.1
         with:
-          args: release-react -a mr.kirill/Test-App -d Staging -t ${{ steps.dotenv.outputs.version }}
+          args: release-react -a mr.kirill/Test-App -d Staging -t $VERSION
         env:
-          APPCENTER_ACCESS_TOKEN: ${{ secrets.APP_CENTER_KEY }}      
+          APPCENTER_ACCESS_TOKEN: ${{ secrets.APP_CENTER_KEY }}
+          VERSION: ${{ steps.dotenv.outputs.version }}   
