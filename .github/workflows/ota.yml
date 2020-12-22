@@ -17,7 +17,7 @@ jobs:
           path: .env.template
           log-variables: true
       - name: Build OTA update for iOS
-        uses: mrikiril/AppCenter-Github-Action@v1.0.0
+        uses: mrikiril/AppCenter-Github-Action@v1.0.3
         with:
           command: appcenter codepush release-react -a mr.kirill/Test-App -d Staging
           token: ${{ secrets.APP_CENTER_KEY }}
