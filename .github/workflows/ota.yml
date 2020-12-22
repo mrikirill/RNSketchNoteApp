@@ -16,10 +16,11 @@ jobs:
         with:
           path: .env.template
           log-variables: true
-      - name: GitHub Action for Codepush
-        uses: NishanthShankar/codepush-action@0.1
-        with:
-          args: release-react -a mr.kirill/Test-App -d Staging -t $VERSION
+      - name: Build OTA update for iOS
+        uses: mrikirill/AppCenter-Github-Action@v1.0.3
         env:
-          APPCENTER_ACCESS_TOKEN: ${{ secrets.APP_CENTER_KEY }}
-          VERSION: ${{ steps.dotenv.outputs.version }}   
+          VERSION: ${{ steps.dotenv.outputs.version }}
+        with:
+          command: appcenter codepush release-react -a mr.kirill/Test-App -d Staging
+          token: ${{ secrets.APP_CENTER_KEY }}
+          version: ${{ steps.dotenv.outputs.version }}
