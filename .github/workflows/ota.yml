@@ -21,4 +21,4 @@ jobs:
         with:
           command: appcenter codepush release-react -a mr.kirill/Test-App -d Staging
           token: ${{ secrets.APP_CENTER_KEY }}
-          version: ${{ steps.dotenv.outputs.version }}
+          version: 1.2.3
