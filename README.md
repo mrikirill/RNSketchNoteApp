@@ -1,5 +1,7 @@
 # RNSketchNote
 
+A demo drawing app which is based on React Native with MobX and SVG
+
 ## Nav
 - [Description](#desc)
 - [Stack](#stack)
@@ -11,12 +13,11 @@
 The main functions of this App:
 * **Drawing component** is based on [React Native SVG](https://github.com/react-native-community/react-native-svg) to implement `Polyline` and use `PanResponder` to detect taps
 * Create a new Sketch
+* Save sketches to AsyncStorage
 * Delete all sketches from AsyncStorage
-* Edit selected sketch and save it AsyncStorage
+* Edit selected sketch and save it by using AsyncStorage
 
-| Preview           | Preview                   |
-|-------------------|---------------------------|
-| ![](prew.png) | ![](prew.gif) |
+![](prew.gif)
 
 ## Stack [](#stack)
 * Architecture: MVVM with MobX
